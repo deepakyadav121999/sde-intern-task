@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css'; // Import the CSS file
+import './App.css'; 
 
 const App = () => {
   const [answers, setAnswers] = useState({
@@ -13,7 +13,7 @@ const App = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
-    // Generate a unique session ID for each customer
+   
     setSessionId(Date.now());
   }, []);
 
@@ -31,13 +31,13 @@ const App = () => {
       return;
     }
 
-    // Save the survey data in localStorage or send it to a backend
+
     localStorage.setItem('survey_' + sessionId, JSON.stringify({ ...answers, status: 'COMPLETED' }));
     setIsSubmitted(true);
 
     setTimeout(() => {
       setIsSubmitted(false);
-      window.location.reload(); // Restart the survey after 5 seconds
+      window.location.reload();
     }, 5000);
   };
 
